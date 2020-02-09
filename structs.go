@@ -30,4 +30,4 @@ type Comment struct {
 	Bad  int
 }
 
-// yamaguti
+// マージ練習
