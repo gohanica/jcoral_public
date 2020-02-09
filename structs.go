@@ -28,4 +28,4 @@ type Comment struct {
 	ID   int
 	Good int
 	Bad  int
-} //sss
+} //sssaa
