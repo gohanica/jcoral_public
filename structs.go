@@ -29,5 +29,3 @@ type Comment struct {
 	Good int
 	Bad  int
 }
-
-// 錦織
