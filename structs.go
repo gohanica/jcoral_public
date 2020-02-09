@@ -31,3 +31,4 @@ type Comment struct {
 }
 
 // マージ練習
+//編集しました
