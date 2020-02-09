@@ -28,7 +28,4 @@ type Comment struct {
 	ID   int
 	Good int
 	Bad  int
-}
-
-// マージ練習
-// 山口のブランチ作成
+} //sssaaasa
