@@ -29,3 +29,5 @@ type Comment struct {
 	Good int
 	Bad  int
 }
+
+// yamaguti
