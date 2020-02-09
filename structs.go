@@ -29,3 +29,4 @@ type Comment struct {
 	Good int
 	Bad  int
 } //sssaaasa
+// マージ実験
