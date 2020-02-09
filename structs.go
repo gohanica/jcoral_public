@@ -28,6 +28,4 @@ type Comment struct {
 	ID   int
 	Good int
 	Bad  int
-}
-
-// マージ練習
+} //sss
