@@ -18,8 +18,9 @@ type Userdata struct {
 
 // Thread スレッドの情報
 type Thread struct {
-	Data Contentdata
-	Tags []string
+	Data     Contentdata
+	Tags     []string
+	Comments []Comment
 }
 
 // Comment コメント一つのデータ
