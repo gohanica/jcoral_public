@@ -1,6 +1,8 @@
 package main
 
-import "time"
+import (
+	"time"
+)
 
 // Contentdata 投稿のデータ
 type Contentdata struct {

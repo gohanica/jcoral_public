@@ -1,12 +1,15 @@
 package main
 
-import "fmt"
+import "net/http"
 
 func main() {
-	fmt.Println("Hello,Worlddedsdsdpushr")
-}
+	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("js/"))))
+	http.Handle("/templates/", http.StripPrefix("/templates/", http.FileServer(http.Dir("templates/"))))
+	http.Handle("/image/", http.StripPrefix("/image/", http.FileServer(http.Dir("image/"))))
 
-//huhuihuiguihgughuihiu
-//cdxxxxxddi
-// 山口用
-// watagoriyou
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "templates/chat.html")
+	})
+	http.HandleFunc("/chat", ToServer)
+	http.ListenAndServe(":8080", nil)
+}
