@@ -18,9 +18,8 @@ type Userdata struct {
 
 // Thread スレッドの情報
 type Thread struct {
-	Data     Contentdata
-	Tags     []string
-	Comments []Comment
+	Data Contentdata
+	Tags []string
 }
 
 // Comment コメント一つのデータ
@@ -29,5 +28,4 @@ type Comment struct {
 	ID   int
 	Good int
 	Bad  int
-} //sssaaasa
-// マージ実験
+}
