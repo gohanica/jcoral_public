@@ -1,24 +1,23 @@
 package main
 
 import (
-//	"time"
+	"time"
 )
 
 func Crawler() {
 	t := time.NewTicker(5 * time.Second)
 	defer t.Stop()
-	layout := time.RFC1123Z
 	for {
 		select {
 		case <-t.C:
-		now:=time.Now()
-		date:=date_from_db()
-		var format_date:=[]time.Time
-		for i range date{
-		}
-		if
-
-
+			now := time.Now()
+			dates := date_from_db()
+			for _, date := range dates {
+				duration := date.AddDate(0, 0, 5).Sub(now)
+				if duration < 0 {
+					delete_comments(date)
+				}
+			}
 		}
 	}
 }

@@ -21,7 +21,7 @@ var (
 )
 
 const (
-	DB_name = "j_practice"
+	DB_name = ` j_practice`
 )
 
 func init() {
@@ -88,6 +88,7 @@ func main() {
 		w.WriteHeader(http.StatusTemporaryRedirect)
 	})
 	//	go r.run()
+	go Crawler()
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal("LIstenAndServe", err)
 	}
