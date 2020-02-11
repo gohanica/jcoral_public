@@ -1,0 +1,28 @@
+
+/* コメント */
+div#text{
+    margin-left : 100px;
+    font-weight: bold;
+}
+/* ユーザーネーム */
+span#name{
+    /* margin-left : 100px; */
+    color: rgb(241, 7, 7);
+}
+/* コメント */
+.comment{
+    color: red;
+
+}
+/* ユーザーネーム */
+.newname{
+    margin-left : 10px;
+}
+/* 時間 */
+.newtime{
+    margin-left : 10px;
+}
+/* ユーザーID */
+.newid{
+    margin-left : 10px;
+}
