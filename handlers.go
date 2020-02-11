@@ -1,6 +1,3 @@
-package jcor
+package main
 
-import (
-
-)
-
+import ()

@@ -10,7 +10,37 @@ import (
 
 	"github.com/stretchr/gomniauth"
 	"github.com/stretchr/gomniauth/providers/google"
+
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 )
+
+var (
+	//DBへのポインタ
+	DB *sql.DB
+)
+
+const (
+	DB_name = "j_practice"
+)
+
+func init() {
+	//gohanica_client
+	sql_username := "gohanica_client"
+	//gohanica_client
+	sql_password := "gohanica_client"
+	//tcp(27.95.148.210)
+	sql_ip_address := "tcp(27.95.148.210)"
+
+	var err error
+	//DBに接続Go本とは記法が少し違うものの性質は全く同じ
+	DB, err = sql.Open("mysql", sql_username+":"+sql_password+"@"+sql_ip_address+"/"+DB_name)
+	//	ShowErr(err)
+	if err != nil {
+		log.Fatal(err)
+	}
+	CREATE_TABLE("kusa")
+}
 
 type templateHandler struct {
 	filename string
@@ -58,7 +88,6 @@ func main() {
 		w.WriteHeader(http.StatusTemporaryRedirect)
 	})
 	//	go r.run()
-	go 
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal("LIstenAndServe", err)
 	}
