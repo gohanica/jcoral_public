@@ -11,18 +11,19 @@ span#name{
 }
 /* コメント */
 .comment{
+    margin-left : 70px;
     color: red;
 
 }
 /* ユーザーネーム */
-.newname{
+.name{
     margin-left : 10px;
 }
 /* 時間 */
-.newtime{
+.time{
     margin-left : 10px;
 }
 /* ユーザーID */
-.newid{
+.id{
     margin-left : 10px;
 }

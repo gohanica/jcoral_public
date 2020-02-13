@@ -1,3 +1,4 @@
+
 let now = new Date();
 let month = now.getMonth() + 1;
 let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
@@ -32,35 +33,29 @@ function send() {
 let userdata = [];
 // websocket サーバからメッセージ受信
 socket.onmessage = function (e) {
-
-
-
     // 実験
     let comments = document.getElementsByClassName("comment");
-
-
-
     let js = JSON.parse(e.data);
 
     // テンプレートデータ取得整形
     userdata = { Message: js.message, Username: js.username }
 
-    // スレッドDOM追加
-    // bodyにdivタグ追加
-    // ユーザー情報
+    // 一つのコメント作成
+    // ユーザープロフィール
     let userinfo = $("<div></div>");
     userinfo.appendTo("body");
-
     let image = $("<img>");
     image.appendTo(userinfo);
     image.attr('src', comment.profileimage);
+    image.attr('align', 'middle');
     let style = {
         'width': '40',
         'height': '40',
-        'align': 'middle'
+
     }
     image.css(style);
 
+    // ユーザー情報
     let name = $("<span></span>");
     name.appendTo(userinfo);
     name.text(userdata.Username);
@@ -74,9 +69,42 @@ socket.onmessage = function (e) {
     id.text(comment.id);
     id.addClass("id");
 
+    // コメント
     let usercomment = $("<div></div>");
     usercomment.appendTo("body");
     usercomment.text(userdata.Message);
     usercomment.addClass("comment");
+
+    let elements = $("div").toArray();
+    console.log(elements);
+
 }
+// コメント検索
+let searchs = $('#search');
+function search() {
+    let commentcolor = $('.comment');
+    let commentname = $('.name');
+    let commenttime = $('.time');
+    let commentid = $('.id');
+    commentcolor.css("color", "red");
+    commentname.css("color", "black");
+    commenttime.css("color", "black");
+    commentid.css("color", "black");
+    $(`div:contains(${searchs.val()})`).css("color", "blue");
+}
+// 検索窓から離したとき色付け
+// $("#search").on("change", function () {
+//     let searchs = $('#search');
+//     let commentcolor = $('.comment');
+//     let commentname = $('.name');
+//     let commenttime = $('.time');
+//     let commentid = $('.id');
+//     commentcolor.css("color", "red");
+//     commentname.css("color", "black");
+//     commenttime.css("color", "black");
+//     commentid.css("color", "black");
+//     $(`div:contains(${searchs.val()})`).css("color", "blue");
+// })
+
+
 
