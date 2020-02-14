@@ -1,14 +1,5 @@
 
-let now = new Date();
-let month = now.getMonth() + 1;
-let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
-let comment = {
-    profileimage: "../image/0.png",
-    name: "大谷翔平",
-    time: nowtime,
-    id: 17123456789,
-    text: "google最強！"
-}
+
 
 // 送信系HTML取得
 let input = document.getElementById('input');
@@ -33,6 +24,16 @@ function send() {
 let userdata = [];
 // websocket サーバからメッセージ受信
 socket.onmessage = function (e) {
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
+    let comment = {
+        profileimage: "../image/0.png",
+        name: "大谷翔平",
+        time: nowtime,
+        id: 17123456789,
+        text: "google最強！"
+    }
     // 実験
     let comments = document.getElementsByClassName("comment");
     let js = JSON.parse(e.data);
@@ -42,69 +43,55 @@ socket.onmessage = function (e) {
 
     // 一つのコメント作成
     // ユーザープロフィール
+    // div追加
     let userinfo = $("<div></div>");
-    userinfo.appendTo("body");
-    let image = $("<img>");
-    image.appendTo(userinfo);
-    image.attr('src', comment.profileimage);
-    image.attr('align', 'middle');
-    let style = {
+    userinfo.addClass("row");
+    userinfo.appendTo(".container");
+
+    // col追加
+    let usercol = $("<div></div>");
+    usercol.addClass("col");
+    usercol.appendTo(".row:last");
+
+    // media追加
+    let usercomment = $("<div></div>");
+    usercomment.addClass("media");
+    usercomment.appendTo(".col:last");
+
+    // imgタグ追加・プロフィール画像追加
+    let userprofile = $("<img>");
+    userprofile.addClass("mr-3");
+    userprofile.appendTo(".media:last");
+    userprofile.attr('src', comment.profileimage);
+    let profilestyle = {
         'width': '40',
         'height': '40',
-
     }
-    image.css(style);
-
-    // ユーザー情報
-    let name = $("<span></span>");
-    name.appendTo(userinfo);
-    name.text(userdata.Username);
-    name.addClass("name");
-    let time = $("<span></span>");
-    time.appendTo(userinfo);
-    time.text(comment.time);
-    time.addClass("time");
-    let id = $("<span></span>");
-    id.appendTo(userinfo);
-    id.text(comment.id);
-    id.addClass("id");
-
-    // コメント
-    let usercomment = $("<div></div>");
-    usercomment.appendTo("body");
-    usercomment.text(userdata.Message);
-    usercomment.addClass("comment");
-
-    let elements = $("div").toArray();
-    console.log(elements);
+    userprofile.css(profilestyle);
+    // ユーザー情報・コメント
+    let usertext = $("<div></div>");
+    usertext.addClass("media-body");
+    usertext.appendTo(".media:last");
+    let username = $("<h5></h5>");
+    username.appendTo(".media-body:last");
+    username.html(userdata.Username + "\t" + comment.time + "\tID:" + comment.id);
+    let userchat = $("<h4></h4>");
+    userchat.appendTo(".media-body:last");
+    userchat.text(userdata.Message);
 
 }
 // コメント検索
 let searchs = $('#search');
 function search() {
-    let commentcolor = $('.comment');
-    let commentname = $('.name');
-    let commenttime = $('.time');
-    let commentid = $('.id');
-    commentcolor.css("color", "red");
+    let commentcolor = $('h4');
+    let commentname = $('.h5');
+
+    commentcolor.css("color", "black");
     commentname.css("color", "black");
-    commenttime.css("color", "black");
-    commentid.css("color", "black");
-    $(`div:contains(${searchs.val()})`).css("color", "blue");
+
+
+    $(`h4:contains(${searchs.val()})`).css("color", "blue");
 }
-// 検索窓から離したとき色付け
-// $("#search").on("change", function () {
-//     let searchs = $('#search');
-//     let commentcolor = $('.comment');
-//     let commentname = $('.name');
-//     let commenttime = $('.time');
-//     let commentid = $('.id');
-//     commentcolor.css("color", "red");
-//     commentname.css("color", "black");
-//     commenttime.css("color", "black");
-//     commentid.css("color", "black");
-//     $(`div:contains(${searchs.val()})`).css("color", "blue");
-// })
 
 
 

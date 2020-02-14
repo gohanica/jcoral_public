@@ -1,29 +1,32 @@
+body {
+    padding-top: 2rem;
+}
 
-/* コメント */
-div#text{
-    margin-left : 100px;
-    font-weight: bold;
-}
-/* ユーザーネーム */
-span#name{
-    /* margin-left : 100px; */
-    color: rgb(241, 7, 7);
-}
-/* コメント */
-.comment{
-    margin-left : 70px;
-    color: red;
+h1,
+h2 {
+  text-align: center;
 
+  margin-bottom: 3rem;
 }
-/* ユーザーネーム */
-.name{
-    margin-left : 10px;
+textarea {
+    resize: none;
 }
-/* 時間 */
-.time{
-    margin-left : 10px;
+
+.jumbotron{
+    background-image: url("../image/0.png");
+    background-size: cover;
+    /* background-position: center 60%; */
+  }
+
+
+.row {
+    margin-bottom: 1rem;
+    min-height: 4rem;
+    background-color: rgba(115, 147, 218, 0.1);
+} 
+#submit,#inputs{
+    background-color: rgba(127, 218, 115, 0.1);
 }
-/* ユーザーID */
-.id{
-    margin-left : 10px;
-}
+.container {
+    margin-bottom: 2rem;
+  }
