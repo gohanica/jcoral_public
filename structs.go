@@ -1,31 +1,62 @@
 package main
 
-import "time"
+import (
+	"net/http"
+	"text/template"
 
-// Contentdata 投稿のデータ
-type Contentdata struct {
-	Time    time.Time
-	Content string
-	User    Userdata
+	"github.com/gorilla/websocket"
+)
+
+//　クライアントデータの大元になっています。
+type client struct {
+	socket   *websocket.Conn
+	send     chan *message
+	room     *room
+	userData map[string]interface{}
 }
 
-// Userdata ユーザーの情報
-type Userdata struct {
+type message struct {
 	Name      string
-	ID        int
+	Message   string
+	When      string
 	AvatarURL string
 }
 
-// Thread スレッドの情報
-type Thread struct {
-	Data Contentdata
-	Tags []string
+type authHandler struct {
+	next http.Handler
 }
 
-// Comment コメント一つのデータ
-type Comment struct {
-	Data Contentdata
-	ID   int
-	Good int
-	Bad  int
-} //sssaaasa
+//チャットの部屋のデータです
+type room struct {
+	forward chan *message
+	join    chan *client
+	leave   chan *client
+	clients map[*client]bool
+}
+
+type templateHandlertochat struct {
+	filenametochat string
+	temptochat     *template.Template
+}
+type templateHandlertothread struct {
+	filenametothread string
+	temptothread     *template.Template
+}
+type templateHandlertologin struct {
+	filenametologin string
+	temptologin     *template.Template
+}
+type receivecontent struct {
+	As string
+	Bs string
+	Cs string
+	Ds string
+	Fs string
+}
+type receivethreads struct {
+	At string
+	Bt string
+	Ct string
+	Dt int
+	Ft string
+}
