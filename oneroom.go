@@ -14,7 +14,6 @@ type room struct {
 	join    chan *client
 	leave   chan *client
 	clients map[*client]bool
-	path    string
 }
 
 func newRoom() *room {

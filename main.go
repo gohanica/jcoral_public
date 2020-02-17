@@ -8,11 +8,10 @@ import (
 
 	"github.com/stretchr/objx"
 
-	"github.com/stretchr/gomniauth"
-	"github.com/stretchr/gomniauth/providers/google"
-
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/stretchr/gomniauth"
+	"github.com/stretchr/gomniauth/providers/google"
 )
 
 var (
@@ -77,6 +76,7 @@ func main() {
 	http.Handle("/login/", &templateHandler{filename: "login.html"})
 	//	http.Handle("/chat/room", r)
 	http.HandleFunc("/auth/", loginHandler)
+	http.HandleFunc("/post", POST)
 	http.HandleFunc("/logout", func(w http.ResponseWriter, r *http.Request) {
 		http.SetCookie(w, &http.Cookie{
 			Name:   "auth",

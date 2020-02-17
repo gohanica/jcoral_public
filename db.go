@@ -54,7 +54,7 @@ func delete_comments(t time.Time) {
 
 func delete_comment_table(t time.Time) {
 	var title string
-	rows, err := DB.Query(`select title from `+DB_name+`.threads where create_time=?;`, t)
+	rows, err := DB.Query(`select title from `+DB_name+`.m_threads where create_time=?;`, t)
 	if err != nil {
 		log.Fatal(err)
 	}
