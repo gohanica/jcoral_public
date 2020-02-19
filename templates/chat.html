@@ -2,22 +2,46 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>jcoral練習</title>
+    <meta charset="utf-8">
+    <title>jqueryのajaxのサンプル</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../pra.css">
+    <link rel="stylesheet" type="text/css" href="../css/chat.css">
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/pra.js"></script>
+    <script src="../js/chat.js"></script>
+
 </head>
 
 <body>
-    <p id="pra">せんがこうだい<strong>おばけほーく</strong>１６５</p>
+    ​ <div class="jumbotron jumbotron-fluid">
+        <h1>Jcoral練習用webアプリ・スレッド編</h1>
+    </div>
+    <h2>スレッドタイトル</h2>
+    <!-- 入力項目 -->
+    <div class="container">
+        <div class="row" id="inputs">
+
+            <div class="col-9">
+                <h4>メッセージ</h4>
+                <input type="text" id="message" type="text" class="form-control"></input><br>
+            </div>
+            <div class="col">
+                <h4>検索</h4>
+                <input type="text" id="search" 　class="form-control">
+            </div>
+        </div>
+        <div class="row" id="submit">
+            <div class="col-9">
+                <button id="send" class="btn btn-primary btn-block">送信</button>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-primary btn-block">文字を検索</button>
+            </div>
+        </div>
 
 
+
+        ​
 </body>
 
 </html>
