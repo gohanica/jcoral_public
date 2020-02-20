@@ -1,9 +1,7 @@
 jQuery(document).ready(function ($) {
 
+    $('#send').on("click", function () {
 
-
-    $("#send").on("click", function () {
-        // 練習用データ
         let now = new Date();
         let month = now.getMonth() + 1;
         let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
@@ -15,7 +13,6 @@ jQuery(document).ready(function ($) {
             text: "google最強！"
         }
 
-        // ajaxメッセージ送受信
         $.ajax({
 
             url: 'http://localhost:8080/pra',
@@ -81,12 +78,9 @@ jQuery(document).ready(function ($) {
             error: function () {
                 $('#result').html("data2");
             }
-
-
         });
+    })
 
-
-    });
 });
 
 
