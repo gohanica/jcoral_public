@@ -10,6 +10,9 @@ body{
  
   /* margin: 10% 20%; 一番左端だとたまに見切れるので適当に移動 */
 }
+.hard { 
+  background: #fffbf2;
+} 
 
 .media{
   height:10vh;
@@ -35,6 +38,3 @@ body{
   /* height: 8vh; */
 }
 
-.hard { 
-  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
-} 

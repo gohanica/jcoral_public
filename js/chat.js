@@ -34,12 +34,23 @@ jQuery(document).ready(function ($) {
                 var jsdata = JSON.parse(jsondata);
                 console.log(jsondata + textStatus);
 
-                // 一つのコメント作  成
+                // 一つのコメント作 成
                 // ユーザープロフィール
-                // div追加
+                // list-group-item追加
+                let userlist = $("<li></li>");
+                userlist.addClass("list-group-item");
+                userlist.appendTo(".list-group-flush:last");
+
+
+                // conteiner追加
+                let usercon = $("<div></div>");
+                usercon.addClass("container");
+                usercon.appendTo(".list-group-item:last");
+
+                // row追加
                 let userinfo = $("<div></div>");
                 userinfo.addClass("row");
-                userinfo.appendTo(".container");
+                userinfo.appendTo(".container:last");
 
                 // col追加
                 let usercol = $("<div></div>");
@@ -56,29 +67,26 @@ jQuery(document).ready(function ($) {
                 userprofile.addClass("mr-3");
                 userprofile.appendTo(".media:last");
                 userprofile.attr('src', comment.profileimage);
-                let profilestyle = {
-                    'width': '60',
-                    'height': '60',
-                }
-                userprofile.css(profilestyle);
+
                 // ユーザー情報・コメント準備
                 let usertext = $("<div></div>");
                 usertext.addClass("media-body");
                 usertext.appendTo(".media:last");
-                let username = $("<h5></h5>");
+                let username = $("<div></div>");
+                username.addClass("userdata");
                 username.appendTo(".media-body:last");
 
                 // ユーザー情報＋コメント表示
                 username.html(comment.name + "\t" + comment.time + "\tID:" + comment.id);
-                let userchat = $("<h4></h4>");
+                let userchat = $("<div></div>");
+                userchat.addClass("usercomment");
                 userchat.appendTo(".media-body:last");
                 userchat.text(jsdata.message);
 
                 // 書き出しをDOM移動
-                $('#userwrite').insertAfter(".row:last");
+                $('#userwrite').insertAfter(".list-group-item:last");
 
-                $('#flute').insertAfter('#main');
-                console.log("todoiteru");
+
             },
             error: function () {
                 $('#result').html("data2");
