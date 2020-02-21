@@ -9,39 +9,43 @@
     <link rel="stylesheet" type="text/css" href="../css/chat.css">
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/turn.js"></script>
     <script src="../js/chat.js"></script>
 
 </head>
 
 <body>
-    ​ <div class="jumbotron jumbotron-fluid">
-        <h1>Jcoral練習用webアプリ・スレッド編</h1>
+
+    <div id="flipbook">
+
+        <div class="container hard">
+            <p>一ページ目</p>
+            <div class="row" id="userwrite">
+                <div class="col-9">
+                    <input class="form-control form-control-lg" type="text" id="message" placeholder="form-control-sm">
+                </div>
+                <div class="col-1">
+                    <input type="button" id="send" value="書き込む">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hard">page3
+            <p id="flute">フルート</p>
+            <div id="main">
+                <p>ヴァイオリン</p>
+                <p>ヴィオラ</p>
+                <p>チェロ</p>
+            </div>
+            <p id="piano">ピアノ</p>
+        </div>
+        <div class="hard">page4</div>
+        <div class="hard">page5</div>
+        <div class="hard">page6</div>
+
     </div>
-    <h2>スレッドタイトル</h2>
-    <!-- 入力項目 -->
-    <div class="container">
-        <div class="row" id="inputs">
-
-            <div class="col-9">
-                <h4>メッセージ</h4>
-                <input type="text" id="message" type="text" class="form-control"></input><br>
-            </div>
-            <div class="col">
-                <h4>検索</h4>
-                <input type="text" id="search" 　class="form-control">
-            </div>
-        </div>
-        <div class="row" id="submit">
-            <div class="col-9">
-                <button id="send" class="btn btn-primary btn-block">送信</button>
-            </div>
-            <div class="col-3">
-                <button class="btn btn-primary btn-block">文字を検索</button>
-            </div>
-        </div>
-
-
-        ​
+    ​
 </body>
 
 </html>

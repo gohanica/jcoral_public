@@ -1,7 +1,10 @@
 jQuery(document).ready(function ($) {
 
-    $('#send').on("click", function () {
+    $("#flipbook").turn({
+    });
 
+    $("#send").on("click", function () {
+        // 練習用データ
         let now = new Date();
         let month = now.getMonth() + 1;
         let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
@@ -13,9 +16,10 @@ jQuery(document).ready(function ($) {
             text: "google最強！"
         }
 
+        // ajaxメッセージ送受信
         $.ajax({
 
-            url: 'http://localhost:8080/pra',
+            url: 'http://localhost:8080/chat/ajax',
             type: 'POST',
             data: JSON.stringify({
                 "message": $("#message").val()
@@ -29,12 +33,8 @@ jQuery(document).ready(function ($) {
                 var jsondata = JSON.stringify(data);
                 var jsdata = JSON.parse(jsondata);
                 console.log(jsondata + textStatus);
-                // $('#result').append(jsondata + "<br>");
-                // $('#result').append(textStatus + "<br>");
 
-                // $('#result').append(jsdata.message + "<br>");
-
-                // 一つのコメント作成
+                // 一つのコメント作  成
                 // ユーザープロフィール
                 // div追加
                 let userinfo = $("<div></div>");
@@ -74,12 +74,19 @@ jQuery(document).ready(function ($) {
                 userchat.appendTo(".media-body:last");
                 userchat.text(jsdata.message);
 
+                // 書き出しをDOM移動
+                $('#userwrite').insertAfter(".row:last");
+
+                $('#flute').insertAfter('#main');
+                console.log("todoiteru");
             },
             error: function () {
                 $('#result').html("data2");
             }
+
         });
-    })
+
+    });
 
 });
 
