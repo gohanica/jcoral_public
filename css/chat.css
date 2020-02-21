@@ -1,16 +1,38 @@
-div {
-  color: white; /* 文字色を白色に */
+
+body{
+  margin:2vh;
 }
 
-.odd {
-  background-color: rgb(163, 101, 8);/* 奇数ページを青色に */
+#userwrite{
+  text-decoration: underline;
 }
-.even {
-  background-color: rgb(99, 100, 1);/* 偶数ページを緑色に */
-}
+
 
 #flipbook {
   /* width: 100vh;  */
-  height: 95vh
+  height: 95vh;
+  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
   /* margin: 10% 20%; 一番左端だとたまに見切れるので適当に移動 */
+}
+
+.hard { 
+   /* width: 500px;  */
+  /* padding:4em; */
+  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+  background-size: auto 3em;
+  line-height: 2.5em;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  overflow: hidden;
+} 
+
+h4
+,h5{
+color: black;
+}
+
+#message{
+  border: 1.6px solid #0a0;  /* 枠線 */
+  background-color:transparent;
 }
