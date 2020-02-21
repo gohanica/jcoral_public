@@ -3,36 +3,38 @@ body{
   margin:2vh;
 }
 
-#userwrite{
-  text-decoration: underline;
-}
-
-
 #flipbook {
   /* width: 100vh;  */
-  height: 95vh;
-  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+  height: 92vh;
+
+ 
   /* margin: 10% 20%; 一番左端だとたまに見切れるので適当に移動 */
 }
 
-.hard { 
-   /* width: 500px;  */
-  /* padding:4em; */
-  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
-  background-size: auto 3em;
-  line-height: 2.5em;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  overflow: hidden;
-} 
-
-h4
-,h5{
-color: black;
+.media{
+  height:8vh;
 }
+.userdata{
+  font-size:2.5vh;
+}
+.usercomment{
+  font-size:3.5vh;
+}
+.mr-3{
+  width:8vh;
+  height: 8vh;
+}
+
 
 #message{
   border: 1.6px solid #0a0;  /* 枠線 */
   background-color:transparent;
 }
+.list-group-item{
+  background-color:transparent;
+  /* height: 8vh; */
+}
+
+.hard { 
+  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+} 
