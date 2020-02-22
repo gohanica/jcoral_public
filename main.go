@@ -7,9 +7,13 @@ import (
 	"net/http"
 )
 
-// Star メッセージ用構造体
-type Star struct {
-	Message string `json:"message"`
+// Comment メッセージ用構造体
+type Comment struct {
+	Message  string `json:"message"`
+	ID       string `json:"id"`
+	Date     string `json:"date"`
+	Profile  string `json:"profile"`
+	Username string `json:"username"`
 }
 
 func main() {
@@ -31,14 +35,16 @@ func main() {
 func process(w http.ResponseWriter, r *http.Request) {
 	// メッセージ受信→json
 	b, _ := ioutil.ReadAll(r.Body)
-	var star Star
-	json.Unmarshal(b, &star)
-	fmt.Println(star)
+	front, _ := ioutil.ReadFile("tofront.json")
+	var comment Comment
+
+	json.Unmarshal(b, &comment)
+	fmt.Println(comment)
 
 	// json→メッセージ保存・送信
-	output, _ := json.MarshalIndent(&star, "", "\t\t")
+	output, _ := json.MarshalIndent(&comment, "", "\t\t")
 	ioutil.WriteFile("messages.json", output, 0644)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write(output)
+	w.Write(front)
 
 }

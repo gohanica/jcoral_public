@@ -77,7 +77,7 @@ jQuery(document).ready(function ($) {
                     let userprofile = $("<img>");
                     userprofile.addClass("mr-3");
                     userprofile.appendTo(".media:last");
-                    userprofile.attr('src', comment.profileimage);
+                    userprofile.attr('src', jsdata.profile);
 
                     // ユーザー情報・コメント準備
                     let usertext = $("<div></div>");
@@ -88,7 +88,7 @@ jQuery(document).ready(function ($) {
                     username.appendTo(".media-body:last");
 
                     // ユーザー情報＋コメント表示
-                    username.html(comment.name + "\t" + comment.time + "\tID:" + comment.id);
+                    username.html(jsdata.username + "\t" + jsdata.date + "\tID:" + jsdata.id);
                     let userchat = $("<div></div>");
                     userchat.addClass("usercomment");
                     userchat.appendTo(".media-body:last");
@@ -133,7 +133,7 @@ jQuery(document).ready(function ($) {
                     let userprofile2 = $("<img>");
                     userprofile2.addClass("mr-3");
                     userprofile2.appendTo(".media:last");
-                    userprofile2.attr('src', comment.profileimage);
+                    userprofile2.attr('src', jsdata.profile);
 
                     // // ユーザー情報・コメント準備
                     let usertext2 = $("<div></div>");
@@ -144,7 +144,7 @@ jQuery(document).ready(function ($) {
                     username2.appendTo(".media-body:last");
 
                     // // ユーザー情報＋コメント表示
-                    username2.html(comment.name + "\t" + comment.time + "\tID:" + comment.id);
+                    username2.html(jsdata.username + "\t" + jsdata.date + "\tID:" + jsdata.id);
                     let userchat2 = $("<div></div>");
                     userchat2.addClass("usercomment");
                     userchat2.appendTo(".media-body:last");
