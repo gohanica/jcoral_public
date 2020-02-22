@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"text/template"
+
 	"io/ioutil"
 	"net/http"
 )
@@ -26,12 +28,27 @@ func main() {
 	}
 
 	http.HandleFunc("/book/ajax", process)
-	http.Handle("/book/", http.StripPrefix("/book/", http.FileServer(http.Dir("templates/"))))
+	http.HandleFunc("/book/templ", templ)
+
 	server.ListenAndServe()
 
 }
 
-// 解析
+// テンプレート用ハンドラ
+func templ(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("templates/book.html")
+
+	var tcomment Comment
+	tcomment.Message = "おばけほーく"
+	tcomment.Date = "2020/02/23/23:13"
+	tcomment.ID = "19930130"
+	tcomment.Profile = "../image/1.png"
+	tcomment.Username = "千賀滉大"
+	tcomments := []Comment{tcomment, tcomment}
+	t.Execute(w, tcomments)
+}
+
+// 解析用ハンドラ
 func process(w http.ResponseWriter, r *http.Request) {
 	// メッセージ受信→json
 	b, _ := ioutil.ReadAll(r.Body)

@@ -17,9 +17,32 @@
     <!-- 本の形式 -->
     <div id="flipbook">
         <div class="hard">
+            <h1>テンプレート練習</h1>
+            {{range.}}
+            <ul class="list-group-flush">
+                <li class="list-group-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="media"><img class="mr-3" src="../image/0.png">
+                                    <div class="media-body">
+                                        <div class="userdata">{{.Username}} {{.Date}} ID:{{.ID}}</div>
+                                        <div class="usercomment">{{.Message}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            {{end}}
+        </div>
+
+
+        <div class="hard">
 
             <!-- ページ作成 -->
-            <h1>１ページ目</h1>
+            <h1>js+jquery+turn.js</h1>
             <ul class="list-group-flush">
                 <!-- 書き込みinput -->
                 <li class="list-group-item" id="userwrite">
