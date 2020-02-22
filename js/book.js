@@ -10,6 +10,7 @@ jQuery(document).ready(function ($) {
         let now = new Date();
         let month = now.getMonth() + 1;
         let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
+        let nowbooktime = now.getFullYear() + "/" + month + "/" + now.getDate();
         let comment = {
             profileimage: "../image/0.png",
             name: "大谷翔平",
@@ -17,6 +18,8 @@ jQuery(document).ready(function ($) {
             id: 17123456789,
             text: "google最強！"
         }
+
+
 
         // ajaxメッセージ送受信
         $.ajax({
@@ -40,7 +43,7 @@ jQuery(document).ready(function ($) {
 
                 // ページに含まれるメッセージの個数調整
                 // <* * を調整することで個数変更＆cssで大きさ変更も忘れないこと
-                if ($("ul:last li").length < 3) {
+                if ($("ul:last li").length < 6) {
 
                     // 一つのコメント作 成
                     // ユーザープロフィール
@@ -161,7 +164,7 @@ jQuery(document).ready(function ($) {
                     // // h1作成
                     let userh = $("<h1></h1>");
                     userh.appendTo(".hard:last")
-                    userh.text("２ページ目");
+                    userh.text(`${nowbooktime}`);
 
                     // // ul作成
                     let userul = $("<ul></ul>");

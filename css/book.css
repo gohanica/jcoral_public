@@ -3,6 +3,7 @@ body{
   margin:2vh;
 }
 
+/* 一ページの大きさ */
 #flipbook {
   /* width: 100vh;  */
   height: 92vh;
@@ -10,10 +11,14 @@ body{
  
   /* margin: 10% 20%; 一番左端だとたまに見切れるので適当に移動 */
 }
+
+/* ページの色 */
 .hard { 
   background: #fffbf2;
 } 
 
+
+/* 一ページのコメント数変更はここ・book.jsの方を変えるのも忘れないこと */
 .media{
   height:10vh;
 }
@@ -28,7 +33,7 @@ body{
   height: 10vh;
 }
 
-
+/* writeの色関係 */
 #message{
   border: 1.6px solid #0a0;  /* 枠線 */
   background-color:transparent;
