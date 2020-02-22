@@ -21,8 +21,8 @@ func main() {
 		Addr: "127.0.0.1:8080",
 	}
 
-	http.HandleFunc("/chat/ajax", process)
-	http.Handle("/chat/", http.StripPrefix("/chat/", http.FileServer(http.Dir("templates/"))))
+	http.HandleFunc("/book/ajax", process)
+	http.Handle("/book/", http.StripPrefix("/book/", http.FileServer(http.Dir("templates/"))))
 	server.ListenAndServe()
 
 }

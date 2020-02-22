@@ -6,39 +6,22 @@
     <title>jqueryのajaxのサンプル</title>
 
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/chat.css">
+    <link rel="stylesheet" type="text/css" href="../css/book.css">
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/turn.js"></script>
-    <script src="../js/chat.js"></script>
+    <script src="../js/book.js"></script>
 
 </head>
 
 <body>
-
+    <!-- 本の形式 -->
     <div id="flipbook">
         <div class="hard">
+
+            <!-- ページ作成 -->
             <h1>１ページ目</h1>
             <ul class="list-group-flush">
-
-                <li class="list-group-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="media">
-                                    <img class="mr-3" src="../image/0.png" width="60" height="60">
-
-                                    <div class="media-body">
-                                        <div class="userdata">大谷翔平</div>
-                                        <div class="usercomment">にとうりゅう</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-
+                <!-- 書き込みinput -->
                 <li class="list-group-item" id="userwrite">
                     <div class="container">
                         <div class="row">
@@ -53,14 +36,13 @@
                     </div>
                 </li>
             </ul>
-
         </div>
-
 
 
 
     </div>
     ​
+    <script src="../js/turn.js"></script>
 </body>
 
 </html>
