@@ -6,9 +6,6 @@ jQuery(document).ready(function ($) {
 
 
     $("#send").on("click", function () {
-
-
-
         // ajaxメッセージ送受信
         $.ajax({
 
