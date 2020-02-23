@@ -15,8 +15,8 @@ import (
 type sendmessage struct {
 	Name      string `json:"name"`
 	Message   string `json:"message"`
-	When      string `json:"when"`
-	AvatarURL string `json:"avatarurl"`
+	When      string `json:"date"`
+	AvatarURL string `json:"profile"`
 	ID        string `json:"id"`
 }
 type recievemessage struct {
