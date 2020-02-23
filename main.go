@@ -26,6 +26,7 @@ type Onepage struct {
 }
 
 func main() {
+<<<<<<< HEAD
 	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("js/"))))
 	http.Handle("/templates/", http.StripPrefix("/templates/", http.FileServer(http.Dir("templates/"))))
 	http.Handle("/image/", http.StripPrefix("/image/", http.FileServer(http.Dir("image/"))))
@@ -92,4 +93,11 @@ func process(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(front)
 
+=======
+	fmt.Println("Hello,Third")
+
+	fmt.Println("exoeriment")
+>>>>>>> master
 }
+
+//iooj

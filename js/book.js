@@ -11,13 +11,7 @@ jQuery(document).ready(function ($) {
         let month = now.getMonth() + 1;
         let nowtime = now.getFullYear() + "/" + month + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes();
         let nowbooktime = now.getFullYear() + "/" + month + "/" + now.getDate();
-        let comment = {
-            profileimage: "../image/0.png",
-            name: "大谷翔平",
-            time: nowtime,
-            id: 17123456789,
-            text: "google最強！"
-        }
+
 
 
 
