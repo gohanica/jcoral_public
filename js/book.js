@@ -14,7 +14,6 @@ jQuery(document).ready(function ($) {
             type: 'POST',
             data: JSON.stringify({
                 "message": $("#message").val()
-
             }),
             dataType: 'json',
             scriptCharset: 'utf-8',
